@@ -1,0 +1,35 @@
+
+
+form {
+   
+    border: coral;
+    margin: 1rem;
+    width: 55%;
+    height: 55%;
+}
+h3 {
+    background-color: lightgreen;
+    padding:2rem;
+    text-align: center;
+    margin: 1rem;
+}
+section {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+#registro {
+
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+}
+.name {
+   padding:1rem;
+}

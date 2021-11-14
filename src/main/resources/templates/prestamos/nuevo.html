@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../styleAltaAutor.css">
+  <title>Nuevo Prestamo</title>
+</head>
+
+<body>
+  <h3 class="h3">Nuevo Prestamo</h3>
+  <section>
+
+    <form action="/" id="registro" method="post"><strong></strong>
+      <div class="mb-3">
+        <label for="isbn" class="form-label"> ISBN</label>
+        <input type="text" class="form-control" name="isbn" placeholder="Ingrese el isbn del libro" required>
+
+      </div>
+      <div class="mb-3">
+        <label for="titulo" class="form-label">Titulo:</label>
+        <input type="text" class="form-control" name="titulo" placeholder="Ingrese el titulo del libro" required>
+
+      </div>
+
+
+      <div class="mb-3">
+        <label for="anio" class="form-label">Año de publicación </label>
+        <input type="text" class="form-control" name="anio" placeholder="Ingrese el año de publicacion" required>
+
+      </div>
+      <div class="mb-3">
+        <label for="ejemplares" class="form-label">Ejemplares</label>
+        <input type="text" class="form-control" name="ejemplares" placeholder="Ingrese la cantidad de ejemplares"
+          required>
+
+      </div>
+
+      <div class="mb-3">
+        <label for="autor" class="form-label">Seleccione el autor</label>
+        <select class="form-control" name="idAutor">
+          <option th:each="autor: ${autores}" th:value="${autor.id}" th:text="${autor.nombre}"></option>
+        </select>
+
+
+      </div>
+      <div class="mb-3">
+        <label for="editorial" class="form-label">Seleccione la editorial</label>
+        <select class="form-control" name="idEditorial">
+          <option th:each="editorial : ${editoriales}" th:value="${editorial.id}" th:text="${editorial.nombre}">
+          </option>
+        </select>
+
+      </div>
+
+      <article>
+        <input type="submit" value="Crear" class="btn btn-success">
+        <a href="/libros" class="btn btn-secondary">Cancelar</a>
+
+      </article>
+
+
+    </form>
+
+  </section>
+
+
+
+</body>
+
+</html>
