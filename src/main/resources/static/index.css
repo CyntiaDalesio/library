@@ -1,0 +1,38 @@
+h1 {
+    
+  text-shadow: coral;
+  border-start-end-radius: 1px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family:'Roboto', sans-serif;
+}
+
+
+
+html body {
+
+  background-image: url("libro.jpg");
+
+    font-family: "Source Sans Pro", Arial, sans-serif;
+   
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #c7e738;
+    /* background:rgb(119, 228, 213); */
+    height: 100%;
+    background-size: 100% 100%;  
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+      
+  }
+
+article {
+   
+  text-align: center;
+
+
+}

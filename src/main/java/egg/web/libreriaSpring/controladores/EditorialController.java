@@ -43,18 +43,17 @@ public class EditorialController {
         }
         return "redirect:/editoriales";
     }
-       @GetMapping("/editoriales/eliminar/{id}")
+
+    @GetMapping("/editoriales/eliminar/{id}")
     public String eliminar(@PathVariable String id) throws ErrorServicio {
 
         edservi.eliminarEditorial(id);
 
         return "redirect:/editoriales";
     }
-    
+
     //---------------------------------------------
-    
-    
-      @GetMapping("/editoriales/editar/{id}")
+    @GetMapping("/editoriales/editar/{id}")
     public String editar(@PathVariable String id, ModelMap model) throws ErrorServicio {
 
         Editorial editorial = edservi.buscarEditorialID(id);
@@ -66,16 +65,11 @@ public class EditorialController {
 
     @PostMapping("editoriales/actualizar/{id}")
     public String actualizar(@PathVariable String id, @RequestParam String name) throws ErrorServicio {
-    
+
         edservi.modificarEditorial(name, id);
 
         return "redirect:/editoriales";
     }
-   
-    
-    //-------------------------------------------------
-    
-    
-    
 
+    //-------------------------------------------------
 }

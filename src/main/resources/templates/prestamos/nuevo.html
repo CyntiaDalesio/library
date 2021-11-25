@@ -18,51 +18,29 @@
   <h3 class="h3">Nuevo Prestamo</h3>
   <section>
 
-    <form action="/" id="registro" method="post"><strong></strong>
+    <form th:action="@{/prestamos/}+${libro.id}" id="registro" th:method="post"><strong></strong>
       <div class="mb-3">
-        <label for="isbn" class="form-label"> ISBN</label>
-        <input type="text" class="form-control" name="isbn" placeholder="Ingrese el isbn del libro" required>
+        <label for="fechaPrestamo" class="form-label"> Fecha de prestamo</label>
+        <input type="date" class="form-control" name="fechaPrestamo" required>
 
       </div>
-      <div class="mb-3">
-        <label for="titulo" class="form-label">Titulo:</label>
-        <input type="text" class="form-control" name="titulo" placeholder="Ingrese el titulo del libro" required>
+      <!-- <div class="mb-3">
+        <label for="fechaDevolucion" class="form-label">Fecha de devolucion:</label>
+        <input type="date" class="form-control" name="fechaDevolucion">
 
-      </div>
+      </div> -->
 
-
-      <div class="mb-3">
-        <label for="anio" class="form-label">Año de publicación </label>
-        <input type="text" class="form-control" name="anio" placeholder="Ingrese el año de publicacion" required>
-
-      </div>
-      <div class="mb-3">
-        <label for="ejemplares" class="form-label">Ejemplares</label>
-        <input type="text" class="form-control" name="ejemplares" placeholder="Ingrese la cantidad de ejemplares"
-          required>
-
-      </div>
 
       <div class="mb-3">
-        <label for="autor" class="form-label">Seleccione el autor</label>
-        <select class="form-control" name="idAutor">
-          <option th:each="autor: ${autores}" th:value="${autor.id}" th:text="${autor.nombre}"></option>
+        <label for="Cliente" class="form-label">Seleccione el cliente</label>
+        <select class="form-control" name="idCliente">
+          <option th:each="cliente: ${clientes}" th:value="${cliente.id}" th:text="${cliente.nombre + ' ' + cliente.apellido}"></option>
         </select>
 
-
-      </div>
-      <div class="mb-3">
-        <label for="editorial" class="form-label">Seleccione la editorial</label>
-        <select class="form-control" name="idEditorial">
-          <option th:each="editorial : ${editoriales}" th:value="${editorial.id}" th:text="${editorial.nombre}">
-          </option>
-        </select>
-
-      </div>
 
       <article>
         <input type="submit" value="Crear" class="btn btn-success">
-        <a href="/libros" class="btn btn-secondary">Cancelar</a>
+        <a href="/prestamos" class="btn btn-secondary">Cancelar</a>
 
       </article>
 

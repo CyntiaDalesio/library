@@ -1,25 +1,34 @@
 package egg.web.libreriaSpring.entidades;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-public class Prestamo {
+public class Prestamo implements Serializable{
 
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
     
+    @Temporal(TemporalType.DATE)
     private Date fechadevolucion;
+    
+    @Temporal(TemporalType.DATE)
     private Date fechaPrestamo;
+    
     private Boolean alta=true;
+    
     @ManyToOne
     private Libro libro;
+    
     @ManyToOne
     private Cliente cliente;
 

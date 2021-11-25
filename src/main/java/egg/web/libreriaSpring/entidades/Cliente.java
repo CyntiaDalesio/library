@@ -4,10 +4,13 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-public class Cliente implements Serializable {
+@Inheritance(strategy = InheritanceType.JOINED)
+public class Cliente implements Serializable{
 
     @Id
     @GeneratedValue(generator = "uuid")
