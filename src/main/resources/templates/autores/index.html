@@ -50,8 +50,8 @@
   
         <td th:text="${autor.alta}"></td>
         <td>
-            <a href="#" th:href="@{/autores/editar/}+${autor.id}" class="btn btn-primary">Editar </a>
-            <a href="#" th:href="@{/autores/eliminar/}+${autor.id}" class="btn btn-danger">Eliminar </a>
+            <a href="#" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/autores/editar/}+${autor.id}" class="btn btn-primary">Editar </a>
+            <a href="#" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/autores/eliminar/}+${autor.id}" class="btn btn-danger">Eliminar </a>
 
 
 

@@ -20,7 +20,6 @@ public class RegistroController {
     private UsuarioService userSer;
 
     @GetMapping("")
-
     public String registro() {
         return "registro";
     }
@@ -33,7 +32,7 @@ public class RegistroController {
         } catch (ErrorServicio ex) {
             model.addAttribute("error", ex.getMessage());
         }
-        return "/registro";
+        return "index";
 
     }
 }

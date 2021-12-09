@@ -51,8 +51,8 @@
         <td th:text="${cliente.telefono}"></td>
         <td th:text="${cliente.alta}"></td>
         <td>
-            <a href="#" th:href="@{/clientes/editar/}+${cliente.id}" class="btn btn-primary">Editar </a>
-            <a href="#" th:href="@{/clientes/eliminar/}+${cliente.id}" class="btn btn-danger">Eliminar </a>
+            <a href="#" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/clientes/editar/}+${cliente.id}" class="btn btn-primary">Editar </a>
+            <a href="#" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/clientes/eliminar/}+${cliente.id}" class="btn btn-danger">Eliminar </a>
 
 
 

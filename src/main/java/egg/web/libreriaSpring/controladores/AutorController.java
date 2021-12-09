@@ -8,6 +8,7 @@ import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,7 +46,7 @@ public class AutorController {
         return "redirect:/autores";
     }
 //////----------------------------------------------------------------------------------------
-
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @GetMapping("/autores/editar/{id}")
     public String editar(@PathVariable String id, ModelMap model) throws ErrorServicio {
 
@@ -64,6 +65,7 @@ public class AutorController {
     }
 
 ///////-------------------------------------------------------------------------------------
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @GetMapping("/autores/eliminar/{id}")
     public String eliminar(@PathVariable String id) throws ErrorServicio {
 
